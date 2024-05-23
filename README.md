@@ -5,7 +5,6 @@ import java.util.logging.Logger;
 
 public class TicTacToe {
     
-    // Instructor Change (A): Added colors to program
     public static final String RESET = "\u001B[0m";
     public static final String BLACK = "\u001B[30m";
     public static final String RED = "\u001B[31m";
@@ -99,7 +98,6 @@ public class TicTacToe {
     public static String[][] updateBoard(String[][] board, char player, int row, int col) {
         Scanner scan = new Scanner(System.in);
         if (board[row][col].equals("")) {
-            // Instructor Change (B): Change user player to print GREEN (Also updated in VC)
             board[row][col] = "[" + GREEN + player + "]" + RESET;
         } else {
             System.out.println("Someone was already placed there. Please try again.");
@@ -135,7 +133,6 @@ public class TicTacToe {
     }
     
     public static boolean victoryCheck(String[][] board, char player) {
-        // Instructor Change (D): Update String p to be the correct color as this is technically part of a String, without it we can't win! 
         String p;
         if(player == 'X') p = "[" + GREEN + player + "]" + RESET;
         else p = BLUE + "[O]" + RESET;
